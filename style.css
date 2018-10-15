@@ -2,6 +2,7 @@
     text-align: center;
     padding: 20px;
     margin-bottom: 5%;
+    background: linear-gradient(0deg, white,silver);
 }
 
 .box {
@@ -12,6 +13,6 @@
 .card {
     float: left;
     width: 300px;
-    height: 200px;
-    margin: 20px;;
+    height: 300px;
+    margin: 20px;
 }
