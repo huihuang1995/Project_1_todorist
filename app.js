@@ -38,6 +38,7 @@ $('#submit').on('click', function (e) {
   
 
   if (username === " " || email === " " || city === "") {
+
     return false;
   } else {
     $("#main").show("slow");
@@ -66,25 +67,19 @@ $('#submit').on('click', function (e) {
         $("#image1").append(img1.attr('src', "https:" + results.events.event[0].image.medium.url));
         $("#image2").append(img2.attr('src', "https:" + results.events.event[1].image.medium.url));
         $("#image3").append(img3.attr('src', "https:" + results.events.event[2].image.medium.url));
-        $("#image4").append(img4.attr('src', "https:" + results.events.event[3].image.medium.url));
+        $("#image4").append(img4.attr('src', "https:" + results.events.event[4].image.medium.url));
 
+        $("#image1").wrap("<a target='_blank' href='"+results.events.event[0].url+"'></a>");
+        $("#image2").wrap("<a target='_blank' href='"+results.events.event[1].url+"'></a>");
+        $("#image3").wrap("<a target='_blank' href='"+results.events.event[2].url+"'></a>");
+        $("#image4").wrap("<a target='_blank' href='"+results.events.event[3].url+"'></a>");
 
         
-        // $("#image1").append(img.attr('src', "https:" + results.events.event[0].image.medium.url));
-        // $("#image2").append(img.attr('src', "https:" + results.events.event[1].image.medium.url));
-        // $("#image3").append(img.attr('src', "https:" + results.events.event[2].image.medium.url));
-        
-
-        console.log(results.events.event[0].image.medium.url);
-        console.log(results.events.event[1].image.medium.url);
-        console.log(results.events.event[2].image.medium.url);
-        console.log(results.events.event[3].image.medium.url);
-
-
         $("#detail1").append(results.events.event[0].title);
         $("#detail2").append(results.events.event[1].title);
         $("#detail3").append(results.events.event[2].title);
-        $("#detail4").append(results.events.event[3].title);
+        $("#detail4").append(results.events.event[4].title);
+
       }
     });
   }
@@ -185,10 +180,10 @@ $.ajax({
   url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key,
   dataType: 'jsonp',
   success: function (json) {
-    console.log(json);
+    // console.log(json);
     // exchange rata data is stored in json.quotes
-    console.log(json.quotes.USDGBP);
-    console.log(json.quotes.USDEUR);
+    // console.log(json.quotes.USDGBP);
+    // console.log(json.quotes.USDEUR);
     $("#euro").append("1 USD =" + json.quotes.USDEUR + "Euro");
     $("#gbp").append("1 USD =" + json.quotes.USDGBP + "GBP");
     $("#jpn").append("1 USD =" + json.quotes.USDJPY + "JPY");
@@ -214,3 +209,137 @@ $.ajax({
 //     console.log(error);
 //   }
 // });
+
+/* -----------------------------------------------
+/* How to use? : Check the GitHub README
+/* ----------------------------------------------- */
+
+/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
+/*
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.js loaded - callback');
+});
+*/
+
+/* Otherwise just put the config content (json): */
+
+particlesJS('particles-js',
+  
+  {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+          "src": "img/github.svg",
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 5,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 400,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true,
+    "config_demo": {
+      "hide_card": false,
+      "background_color": "#b61924",
+      "background_image": "",
+      "background_position": "50% 50%",
+      "background_repeat": "no-repeat",
+      "background_size": "cover"
+    }
+  }
+
+);
