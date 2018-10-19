@@ -1,73 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Todorist</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-app.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-	<style>
-		#map {
-			height: 250px;
-			width: 250px;
-		}
-	</style>
-  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmHORUbOTsOf_hlWZLWvGcf0ohRWAoYzU
-	&libraries=visualization&callback=initMap"></script>
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaEd-YGdXjyQ4Ln3YZBauT_LRAmMeCmMY&callback=initMap"> 
-   </script>
-  <script type="text/javascript" src="http://api.eventful.com/js/api">
-
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <style>
+    #map {
+            height: 250px;
+            width: 250px;
+        }
+   /* #money{
+     float: right ;
+   } */
+   #title{
+       background-image: url("logo.jpg")
+   }
+   #main{
+     float: left;
+   }
+    </style>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaEd-YGdXjyQ4Ln3YZBauT_LRAmMeCmMY&callback=initMap">
   </script>
+
+  
+  <!-- <script type="text/javascript" src="http://api.eventful.com/js/api">
+
+ </script> -->
 </head>
 
 <body>
   <div class="container">
     <div class="jumbotron">
       <img src="assets/Todorist.png" alt="Todorist">
+    
+
     </div>
-    <div class="row">
-      <div class="col-4">
-        <input class="box" id="name" placeholder="Your name" type="text">
-        <input class="box"  id="email" placeholder="Email" type="text">
-        <input class="box"  id="city" placeholder="City" type="text">
-        <br>
-        <button id="submit" class="btn btn-danger"> Submit </button>
-        <div id="map"></div>
+
+    <div class="row" id="start">
+        <div id="form" class="signIn">Ready to Go?</div>
+        <div class="fold">
+          <form id="form1">
+            <input id="name" placeholder="Your name" type="text" required>
+            <input id="email" placeholder="Email" type="text" required>
+            <input id="city" placeholder="City" type="text" required >
+            <button id="submit" type="submit" class="btn btn-danger"> Let's Go</button>
+          </form>
+        </div>
       </div>
-      <div class="col-8">
-        <div class="card">
-          <div class="front">
-          <img class="eventPic" src="http://d1marr3m5x4iac.cloudfront.net/images/medium/I0-001/004/257/504-4.jpeg_/joe-bonamassa-04.jpeg"
-            alt="pic">
-            </div>
-            <div class="back">
-              <div class="map">
-                
+
+      <div class="row" id="main">
+
+        <div id="sideBar" class="col-4">
+          <div id="clock">
+
+
+            <ul id="webTicker">
+              <li id="euro" placeholder="usdeuro"></li>
+              <li id="gbp" placeholder="usdgpb"> </li>
+              <li id="jpn" aria-placeholder="usdjpn"> </li>
+            </ul>
+            <iframe src="http://free.timeanddate.com/clock/i6gji44g/n156/szw110/szh110/hocf00/hbw4/cf100/hnce1ead6/fiv0/fan3/fas26/facf00/mqc000/mqs3/mql25/mqw2/mqd96/mhc000/mhs3/mhl20/mhw2/mhd96/mmc000/mms3/mml5/mmw2/mmd96/hhs2/hhw8/hms2/hmw8/hmr4/hsc000/hss3/hsl90"
+              frameborder="0" width="110" height="110"></iframe>
+
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="col-8">
+          <div class="container">
+            <div class="box">
+              <div class="eventImage" id="image4" aria-hidden="true"></div>
+              <div class="content">
+                <p id="detail1">
+
+                </p>
               </div>
+              
             </div>
-        </div>
 
-        <div class="card">
-          <img class="eventPic" src="https://via.placeholder.com/200x200" alt="pic">
-        </div>
+            <div class="box">
+              <div class="eventImage" id="image2" aria-hidden="true">
 
-        <div class="card">
-          <img class="eventPic" src="https://via.placeholder.com/200x200" alt="pic">
-        </div>
+              </div>
+              <div class="content">
+                <p id="detail2">
 
-        <div class="card">
-          <img class="eventPic" src="https://via.placeholder.com/200x200" alt="pic">
-        </div>
+                </p>
+              </div>
+              
+            </div>
 
+            <div class="box">
+              <div class="eventImage" id="image3" aria-hidden="true"></div>
+              <div class="content">
+                <p id="detail3">
+
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="box">
+              <div class="eventImage" id="image1" aria-hidden="true"></div>
+              <div class="content">
+                <p id="detail4">
+
+                </p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

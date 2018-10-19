@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Todorist</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-app.js"></script>
+ <script
+ src="https://code.jquery.com/jquery-3.3.1.min.js"
+ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <style>
+        #map {
+            height: 250px;
+            width: 250px;
+        }
+   /* #money{
+     float: right ;
+   } */
+   #title{
+       background-image: url("logo.jpg")
+   }
+   #main{
+     float: left;
+   }
+    </style>
+ <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmHORUbOTsOf_hlWZLWvGcf0ohRWAoYzU
+    &libraries=visualization&callback=initMap"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaEd-YGdXjyQ4Ln3YZBauT_LRAmMeCmMY&callback=initMap">
+  </script>
+ <!-- <script type="text/javascript" src="http://api.eventful.com/js/api">
+
+ </script> -->
+</head>
+<body>
+ <div class="container">
+   <div id="title">
+     <img src="logo.png" alt="logo" width="200" height="100" >
+     <!-- <h1>Todorist</h1> -->
+
+   </div>
+
+   <div class="row">
+     <div id="form" class="col-12">
+       <input id="name" placeholder="Your name" type="text">
+       <input id="email" placeholder="Email" type="text">
+       <input id="city" placeholder="City" type="text">
+                <button id="submit" class="btn btn-danger"> Submit </button>
+                
+     </div>
+
+     <div class="row">
+     <div id="main" class="col-12">
+
+       <div id="sideBar" class="col-4">
+         <div id="clock">
+
+             <ul id="money" >
+                 <li id="euro"placeholder="usdeuro" ></li>
+                 <li id="gbp" placeholder="usdgpb" >  </li>
+                 <li id="jpn" aria-placeholder="usdjpn" > </li>
+               </ul>
+             <iframe src="http://free.timeanddate.com/clock/i6gji44g/n156/szw110/szh110/hocf00/hbw4/cf100/hnce1ead6/fiv0/fan3/fas26/facf00/mqc000/mqs3/mql25/mqw2/mqd96/mhc000/mhs3/mhl20/mhw2/mhd96/mmc000/mms3/mml5/mmw2/mmd96/hhs2/hhw8/hms2/hmw8/hmr4/hsc000/hss3/hsl90" frameborder="0" width="110" height="110"></iframe>
+
+           </div>
+         <div id="map" ></div>
+       </div>
+
+       <div class="col-8">
+
+       <img src= "http://d1marr3m5x4iac.cloudfront.net/images/medium/I0-001/004/257/504-4.jpeg_/joe-bonamassa-04.jpeg" alt="pic">
+       <img id="pic2"src="https://via.placeholder.com/200x200" alt="pic">
+       <img id="pic3" src="https://via.placeholder.com/200x200" alt="pic">
+       <img id="pic4" src="https://via.placeholder.com/200x200" alt="pic">
+
+     </div>
+   </div>
+ </div>
+
+
+
+   <script src="app.js"></script>
+ </div>
+
+</body>
+</html>
