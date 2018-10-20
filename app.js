@@ -53,10 +53,6 @@ $('#submit').on('click', function (e) {
       dataType: 'jsonp',
       success: function (results) {
         console.log(results);
-        // results = results;
-    
-
-      //  results = results;
 
 
         var img1 = $("<img>");

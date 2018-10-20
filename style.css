@@ -4,8 +4,15 @@ body {
     background-size: cover;
     background-color: #A9A9A9;
     background-blend-mode: color-burn;
-    height: 100%;
-    width: 100%;
+}
+
+#map {
+    height: 250px;
+     width: 250px;
+}
+
+#main{
+     float: left;
 }
 
 .container{
@@ -18,7 +25,7 @@ body {
 
 .jumbotron {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 5%;
     margin-top: 5%;
     background: transparent;
