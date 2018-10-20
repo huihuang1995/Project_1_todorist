@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-color: #A9A9A9;
     background-blend-mode: color-burn;
+    overflow: auto;
 }
 
 #map {
@@ -104,7 +105,7 @@ body {
     position: relative;
     width: calc(300px - 30px);
     height: calc(300px - 30px);
-    background: #1f9a95;
+    background: #247ebf;
     float: left;
     margin: 15px;
     box-sizing: border-box;
@@ -157,7 +158,6 @@ body {
 }
 
 .card{
-
     margin-top: 20px;
     border: 1px solid #247ebf;
 }

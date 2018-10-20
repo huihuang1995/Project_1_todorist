@@ -11,7 +11,7 @@ var database = firebase.database();
 var results;
 $(document).ready(function () {
   $("#main").css("display", "none");
-  $("#start").css("height", "100%");
+  $("#start").css("height", "90%");
 
   $(".signIn").on('click', function () {
     $('.fold').toggleClass("active")
@@ -48,6 +48,7 @@ $('#submit').on('click', function (e) {
     $('#email').val('');
     $('#city').val('');
 
+
     $.ajax({
       url: "https://api.eventful.com/json/events/search?app_key=g8Gs5ZhQz7pJNfkr&location=Miami&within=10&sort_order=popularity",
       dataType: 'jsonp',
@@ -59,30 +60,26 @@ $('#submit').on('click', function (e) {
         var img2 = $("<img>");
         var img3 = $("<img>");
         var img4 = $("<img>");
-        var img5 = $("<img>");
-        var img6 = $("<img>");
+        
 
         $("#image1").append(img1.attr('src', "https:" + results.events.event[0].image.medium.url));
         $("#image2").append(img2.attr('src', "https:" + results.events.event[1].image.medium.url));
         $("#image3").append(img3.attr('src', "https:" + results.events.event[2].image.medium.url));
         $("#image4").append(img4.attr('src', "https:" + results.events.event[4].image.medium.url));
-        $("#image5").append(img5.attr('src', "https:" + results.events.event[6].image.medium.url));
-        $("#image6").append(img6.attr('src', "https:" + results.events.event[7].image.medium.url));
+        
 
         $("#image1").wrap("<a target='_blank' href='"+results.events.event[0].url+"'></a>");
         $("#image2").wrap("<a target='_blank' href='"+results.events.event[1].url+"'></a>");
         $("#image3").wrap("<a target='_blank' href='"+results.events.event[2].url+"'></a>");
         $("#image4").wrap("<a target='_blank' href='"+results.events.event[3].url+"'></a>");
-        $("#image5").wrap("<a target='_blank' href='"+results.events.event[6].url+"'></a>");
-        $("#image6").wrap("<a target='_blank' href='"+results.events.event[7].url+"'></a>");
+        
 
         
         $("#detail1").append(results.events.event[0].title);
         $("#detail2").append(results.events.event[1].title);
         $("#detail3").append(results.events.event[2].title);
         $("#detail4").append(results.events.event[4].title);
-        $("#detail5").append(results.events.event[6].title);
-        $("#detail6").append(results.events.event[7].title);
+        
 
       }
     });
