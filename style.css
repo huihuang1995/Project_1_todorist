@@ -2,7 +2,7 @@ body {
     background-image: url(./assets/water-map.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #C0C0C0;
+    background-color: #A9A9A9;
     background-blend-mode: color-burn;
     height: 100%;
     width: 100%;
@@ -12,7 +12,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 
 }
 
@@ -20,6 +20,7 @@ body {
     text-align: center;
     padding: 20px;
     margin-bottom: 5%;
+    margin-top: 5%;
     background: transparent;
 }
 
@@ -148,23 +149,31 @@ body {
     height: 100%;
 }
 
-#sideBar{
-    border: 2px solid #696969;
-}
 .card{
 
     margin-top: 20px;
     border: 1px solid #247ebf;
 }
 
-li{
-    color: #000;
-    font: 20px;
-    text-shadow: 0px 0px 10px #00FF00,
-                 0px 0px 20px #00FF00,
-                 0px 0px 30px #00FF00,
-                 0px 0px 40px #00FF00,
-                 0px 0px 50px #00FF00,
-                 0px 0px 60px #00FF00,
-                 0px 0px 70px #00FF00;
+form p{
+    position: relative;
+    color: #fff;
+}
+
+iframe {
+    margin-left: 50px;
+}
+
+
+#euro, #gbp, #jpn {
+    padding: 15px;
+    font: 25px;
+    color: #fff;
+    text-shadow:   0 0 5px #fff,
+                   0 0 10px #fff, 
+                   0 0 20px #00BFFF,
+                   0 0 30px #00BFFF,
+                   0 0 40px #00BFFF, 
+                   0 0 55px #00BFFF, 
+                   0 0 75px #00BFFF;
 }

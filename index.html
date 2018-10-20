@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Todorist</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-app.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,12 +15,7 @@
             height: 250px;
             width: 250px;
         }
-   /* #money{
-     float: right ;
-   } */
-   #title{
-       background-image: url("logo.jpg")
-   }
+
    #main{
      float: left;
    }
@@ -63,14 +58,17 @@
         <div id="clock">
 
 
-          <ul>
-            <li id="euro" placeholder="usdeuro"></li>
-            <li id="gbp" placeholder="usdgpb"> </li>
-            <li id="jpn" aria-placeholder="usdjpn"> </li>
-          </ul>
 
-          <iframe src="http://free.timeanddate.com/clock/i6gji44g/n156/szw110/szh110/hocf00/hbw4/cf100/hnce1ead6/fiv0/fan3/fas26/facf00/mqc000/mqs3/mql25/mqw2/mqd96/mhc000/mhs3/mhl20/mhw2/mhd96/mmc000/mms3/mml5/mmw2/mmd96/hhs2/hhw8/hms2/hmw8/hmr4/hsc000/hss3/hsl90"
-            frameborder="0" width="110" height="110"></iframe>
+          <div id="euro" placeholder="usdeuro"></div>
+          <div id="gbp" placeholder="usdgpb"> </div>
+          <div id="jpn" aria-placeholder="usdjpn"> </div>
+
+          <iframe src="http://free.timeanddate.com/clock/i6gsb2og/n156/szw160/szh160/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fdi78/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
+            frameborder="0" width="160" height="160"></iframe>
+
+
+
+
         </div>
         <div id="map"></div>
 
@@ -82,7 +80,7 @@
               var fontface = "Arial";
               var textcolor = "black";
               var textsize = "4";
-                
+
             </script>
             <script language="JavaScript" src="http://nickeysurf.com/quotes/qotd.js" type="text/javascript"></script>
             </td>
@@ -154,16 +152,38 @@
 
               </p>
             </div>
-            
+
+
+
           </div>
+          <div class="box">
+            <div class="eventImage" id="image5" aria-hidden="true">
+
+            </div>
+            <div class="content">
+              <p id="detail5">
+
+              </p>
+            </div>
+
+
+          </div>
+          <div class="box">
+              <div class="eventImage" id="image6" aria-hidden="true">
+
+              </div>
+              <div class="content">
+                <p id="detail6">
+
+                </p>
+              </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <script src="particles.js"></script>
-  <script src="app.js"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
   </div>
 
 </body>
